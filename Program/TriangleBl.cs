@@ -1,10 +1,11 @@
 namespace TriangleDetermination
 {
-    public class TriangleBl
+    public static class TriangleBl
     {
-        private bool AllSidesEqual(int side1, int side2, int side3) => (side1 + side2) == side3 * 2;
+        private static bool AllSidesEqual(int side1, int side2, int side3) => side1 == side2 && side2 == side3;
+        private static bool TwoSidesEqual(int side1, int side2, int side3) => side1 == side2;
 
-        public TriangleEnum DetermineType(int side1, int side2, int side3)
+        public static TriangleEnum DetermineType(int side1, int side2, int side3)
         {
             if(AllSidesEqual(side1, side2, side3))
             {
@@ -12,11 +13,10 @@ namespace TriangleDetermination
             }
 
 
-            if(side1 == side2)
+            if(TwoSidesEqual(side1, side2, side3))
             {
                 return TriangleEnum.Isosceles;
             }
-
 
             return TriangleEnum.Scalene;
         }
