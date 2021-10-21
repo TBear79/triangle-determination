@@ -8,13 +8,13 @@ namespace TriangleDetermination
         {
             Console.WriteLine("To be able to determine the type of triangle, please enter the length of each side.");
             
-            Input("1");
-            Input("2");
-            Input("3");
+            var side1 = Input("1");
+            var side2 = Input("2");
+            var side3 = Input("3");
 
             Console.WriteLine("Determining the type of triangle...");
 
-            var triangleEnum = TriangleEnum.Scalene;
+            var triangleEnum = TriangleBl.DetermineType(side1, side2, side3);
 
             Console.WriteLine($"The triangle is a \"{triangleEnum}\"");
         }
