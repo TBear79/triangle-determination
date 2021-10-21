@@ -12,10 +12,14 @@ Since the logic doesn't depend on any sub-classes or database dependencies, I ha
 
 The logic for determining the type of triangle is done using TDD where as the shell for the program is not tested. Thats because I'd have to mock out console writes... and that would require googling :-)
 
-## Run it
+## Run Program
 
 Well, if it where a real program I'd Dockerize it, but now just go to the /Program folder and write
 ```
 dotnet run
 ```
 
+## Run Tests
+```
+dotnet test Tests/TriangleDetermination.Test.csproj
+```
